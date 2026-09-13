@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capacity Connect — Settings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Layout look comes from the trainee theme (no shared dashboard CSS exists) -->
+    <link rel="stylesheet" href="../trainee/style.css" />
+    <link rel="stylesheet" href="./guest.css" />
+  </head>
+
+  <body>
+    <!-- mobile menu button: shows sidebar on small screens -->
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <!-- top-right user card: role filled by script.js from login -->
+    <div class="user-card">
+      <div class="avatar" id="avatarLetter">A</div>
+      <div class="user-info">
+        <strong>ANALOGUE <span class="user-type" id="roleBadge">| guest</span></strong>
+        <small id="userEmail">Please log in</small>
+      </div>
+      <a class="logout-link" href="../auth/index.html" id="logoutLink">Login</a>
+    </div>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Site navigation">
+        <div>
+          <a class="workspace" href="../index.html">
+            <span class="workspace-icon"><img src="../svgs/logo.svg" alt="Capacity Connect logo" /></span>
+            Capacity Connect
+          </a>
+
+          <label class="srch">
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search" />
+            <span class="srch-icon" aria-hidden="true"><img src="../svgs/SearchIcon.svg" alt="search" /></span>
+          </label>
+
+          <!-- NEUTRAL TRIO: one link per role dashboard -->
+          <nav class="side-nav" id="mainNav">
+            <a href="../trainee/index.html"><span>◫</span> Trainee Dashboard</a>
+            <a href="../trainer/index.html"><span>↗</span> Trainer Dashboard</a>
+            <a href="../admin/index.html"><span>◌</span> Admin Dashboard</a>
+          </nav>
+
+          <p class="nav-label">Docs</p>
+
+          <nav class="side-nav">
+            <a href="./more.html"><span><img src="../svgs/reportIcon.svg" alt="reports" /></span> Reports</a>
+            <a href="./more.html"><span><img src="../svgs/categories-icon.svg" alt="more" /></span> More</a>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <nav class="side-nav utility-nav">
+            <a class="active" href="./settings.html"><span>⚙</span> Settings</a>
+          </nav>
+        </div>
+      </aside>
+
+      <main class="dashboard">
+        <p class="eyebrow">SETTINGS · PLACEHOLDER</p>
+        <h1>Settings</h1>
+        <p class="intro">Under construction.</p>
+      </main>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="explore">
+        <strong>EXPLORE</strong>
+        <a href="../index.html">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <strong>LEGAL</strong>
+        <a href="#">Privacy</a>
+        <a href="#">Disclaimer</a>
+      </div>
+      <div>
+        <strong>Site Info</strong>
+        <a href="#">Site Map</a>
+      </div>
+      <div>
+        <strong>ANALOGUE Developers</strong>
+        <p>Crafted for learners, mentors, and Analyzer.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Github <img src="../svgs/github.svg" alt="github" /></a>
+        <a href="#">Discord <img src="../svgs/discord.svg" alt="discord" /></a>
+        <a href="#">t.me <img src="../svgs/telegram.svg" alt="telegram" /></a>
+      </div>
+    </footer>
+  </body>
+  <script src="../trainee/script.js"></script>
+  <script src="./guest.js"></script>
+</html>
+

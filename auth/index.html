@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capacity Connect — Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+  <!-- WRAPPER: card + demo button side by side on desktop -->
+  <div class="auth-layout">
+    <main class="auth-wrap">
+      <div class="auth-card">
+      <!-- logo back to landing -->
+      <a class="auth-logo" href="../index.html"><span class="logo-icon"><img src="../svgs/logo.svg" alt="Capacity Connect logo" /></span> Capacity Connect</a>
+      <h1>Welcome back!</h1>
+      <p class="auth-sub">Select your role to continue</p>
+
+      <!-- 1. TOP selection for all three roles -->
+      <div class="role-select" role="tablist" aria-label="Select role">
+        <button type="button" class="role-btn active" data-role="trainee" role="tab" aria-selected="true">Trainee</button>
+        <button type="button" class="role-btn" data-role="trainer" role="tab" aria-selected="false">Trainer</button>
+        <button type="button" class="role-btn" data-role="admin" role="tab" aria-selected="false">Admin</button>
+      </div>
+      <p class="role-hint" id="roleHint">Logging in as <b id="roleName">Trainee</b></p>
+
+      <!-- MESSAGE TEXT on the upper side: plain red/green text, no box -->
+      <p class="auth-msg" id="authMsg" hidden></p>
+
+      <!-- 2. Other inputs -->
+      <form id="loginForm">
+        <label class="field">
+          <span>Email</span>
+          <input type="email" id="email" placeholder="analogue@mail.com" required />
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input type="password" id="password" placeholder="••••••••" required minlength="4" />
+        </label>
+
+        <!-- 3. Login -->
+        <button type="submit" class="login-btn" id="loginBtn">Login as Trainee</button>
+      </form>
+
+      <p class="auth-switch">New here? <a href="register.html">Create account</a></p>
+      <p class="auth-note">Your login is saved in this browser.</p>
+      <p class="auth-switch"><a href="#" id="resetDemo">Reset demo data</a></p>
+      </div>
+    </main>
+
+    <!-- DEMO BUTTON on the side of the card: fills demo email + password for the selected role -->
+    <button type="button" class="demo-side-btn" id="demoBtn" aria-label="Fill demo account">Demo</button>
+  </div>
+  <script src="../shared/activity.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
+

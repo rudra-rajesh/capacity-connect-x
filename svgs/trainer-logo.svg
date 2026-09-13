@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Trainer mark: board with teacher -->
+  <rect fill="none" stroke="#111111" stroke-width="4" x="5" y="8" width="34" height="24" rx="3" />
+  <path fill="none" stroke="#111111" stroke-width="4" stroke-linecap="round" d="M13 17 L22 17 M13 23 L19 23" />
+  <circle fill="#111111" cx="50" cy="18" r="6" />
+  <path fill="#111111" d="M40 54 C40 46 44 40 50 40 C56 40 60 46 60 54 L40 54 Z" />
+  <rect fill="#f45b45" x="17" y="38" width="10" height="14" rx="2" />
+</svg>

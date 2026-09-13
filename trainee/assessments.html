@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capacity Connect — Trainee Assessments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../shared/guest.css" />
+  </head>
+
+  <body>
+    <!-- mobile menu button: shows sidebar on small screens -->
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <!-- top-right user card: role filled by script.js from login -->
+    <div class="user-card">
+      <div class="avatar" id="avatarLetter">A</div>
+      <div class="user-info">
+        <strong>ANALOGUE <span class="user-type" id="roleBadge">| trainee</span></strong>
+        <small id="userEmail">analogue@mail.com</small>
+      </div>
+      <a class="logout-link" href="../auth/index.html" id="logoutLink">Logout</a>
+    </div>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Trainee navigation">
+        <div>
+          <a class="workspace" href="../index.html">
+            <span class="workspace-icon"><img src="../svgs/trainee-logo.svg" alt="trainee logo" /></span>
+            Capacity Connect
+          </a>
+
+          <label class="srch">
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search" />
+            <span class="srch-icon" aria-hidden="true"><img src="../svgs/SearchIcon.svg" alt="search" /></span>
+          </label>
+
+          <!-- TRAINEE main nav -->
+          <nav class="side-nav" id="mainNav">
+            <a href="index.html"><span>⌂</span> Dashboard</a>
+            <a href="courses.html"><span><img src="../svgs/buffercopy.svg" alt="" /></span> My Courses</a>
+            <a href="resources.html"><span>▥</span> Resources</a>
+            <a class="active" href="assessments.html"><span>▱</span> Assessments</a>
+          </nav>
+
+          <p class="nav-label">Docs</p>
+
+          <nav class="side-nav">
+            <a href="../shared/more.html"><span><img src="../svgs/reportIcon.svg" alt="reports" /></span> Reports</a>
+            <a href="../shared/more.html"><span><img src="../svgs/categories-icon.svg" alt="more" /></span> More</a>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <nav class="side-nav utility-nav">
+            <a href="profile.html"><span>◉</span> Profile</a>
+            <a href="../shared/settings.html"><span>⚙</span> Settings</a>
+          </nav>
+        </div>
+      </aside>
+
+      <main class="dashboard quiz-page">
+        <p class="eyebrow">TRAINEE · ASSESSMENTS</p>
+        <h1>Course Quiz</h1>
+        <p class="intro" id="quizIntro">
+          Answer the questions below. Parts A and B are checked at once.
+          Part C is sent to your trainer for review. ensure your <b>Feedback</b> for better exp. 
+        </p>
+
+        <!-- GATE NOTE: shown when Submit is locked (guest or not approved) -->
+        <p class="gate-note" id="gateNote" hidden></p>
+
+        <!-- YOUR ASSESSMENTS: only enrolled courses appear here.
+             Choosing one (Open Quiz) asks its questions below. -->
+        <h2 class="list-title">Your assessments</h2>
+        <div id="assessList"></div>
+        <div class="empty-state" id="assessEmpty" hidden>
+          No assessments yet. <a href="courses.html">Enroll in a course</a> first — its quiz appears here.
+        </div>
+
+        <!-- LOCKED NOTE: shown when the chosen quiz is not enrolled -->
+        <p class="gate-note" id="lockNote" hidden></p>
+
+        <!-- CHANGE TOPIC HERE: all questions below are Web Basics placeholders.
+             To use your real topic, edit only the question text and move
+             data-correct="1" to the right options. Do not change anything else. -->
+        <form class="quiz" id="quizForm">
+
+          <!-- PART A: MCQ, single answer (round buttons) -->
+          <section class="quiz-part">
+            <h2>Part A · MCQ — pick one</h2>
+
+            <div class="question" data-type="mcq">
+              <p><b>Q1.</b> Which tag makes the biggest heading?</p>
+              <label><input type="radio" name="q1" value="p" /> &lt;p&gt;</label>
+              <label><input type="radio" name="q1" value="h1" data-correct="1" /> &lt;h1&gt;</label>
+              <label><input type="radio" name="q1" value="div" /> &lt;div&gt;</label>
+              <label><input type="radio" name="q1" value="span" /> &lt;span&gt;</label>
+            </div>
+
+            <div class="question" data-type="mcq">
+              <p><b>Q2.</b> Which CSS property changes text color?</p>
+              <label><input type="radio" name="q2" value="background" /> background</label>
+              <label><input type="radio" name="q2" value="color" data-correct="1" /> color</label>
+              <label><input type="radio" name="q2" value="font-size" /> font-size</label>
+              <label><input type="radio" name="q2" value="margin" /> margin</label>
+            </div>
+
+            <div class="question" data-type="mcq">
+              <p><b>Q3.</b> In JavaScript, what does === compare?</p>
+              <label><input type="radio" name="q3" value="value" /> Value only</label>
+              <label><input type="radio" name="q3" value="both" data-correct="1" /> Value and type</label>
+              <label><input type="radio" name="q3" value="nothing" /> Nothing</label>
+              <label><input type="radio" name="q3" value="color" /> Text color</label>
+            </div>
+          </section>
+
+          <!-- PART B: MULTI-TICK, tick all correct (square boxes) -->
+          <section class="quiz-part">
+            <h2>Part B · Multi-tick — tick all correct</h2>
+
+            <div class="question" data-type="multi">
+              <p><b>Q4.</b> Which of these are HTML tags? (3 correct)</p>
+              <label><input type="checkbox" value="h1" data-correct="1" /> &lt;h1&gt;</label>
+              <label><input type="checkbox" value="p" data-correct="1" /> &lt;p&gt;</label>
+              <label><input type="checkbox" value="color" /> color</label>
+              <label><input type="checkbox" value="div" data-correct="1" /> &lt;div&gt;</label>
+            </div>
+          </section>
+
+          <!-- PART C: SHORT ANSWER, checked by trainer later -->
+          <section class="quiz-part">
+            <h2>Part C · Short answer — one or two lines</h2>
+
+            <div class="question" data-type="short">
+              <p><b>Q5.</b> In your own words, what does CSS do for a web page?</p>
+              <textarea id="shortAns" rows="3" placeholder="Write 1-2 lines..."></textarea>
+              <small class="hint">This answer is sent to your trainer for review. It is not auto-checked.</small>
+            </div>
+          </section>
+
+          <!-- FEEDBACK: title + type bar only, before Submit -->
+          <section class="quiz-part feedback-part">
+            <h2>Feedback</h2>
+            <textarea id="feedbackText" rows="3" placeholder="Type here..."></textarea>
+          </section>
+
+          <button class="get-started-btn" id="submitQuiz" type="submit">Submit Quiz</button>
+
+          <!-- SCORE BOX: hidden until Submit is pressed -->
+          <div class="score-box" id="scoreBox" hidden>
+            <strong id="scoreText">You scored 0 / 4</strong>
+            <small>Parts A + B are auto-checked. Part C goes to your trainer.</small>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="explore">
+        <strong>EXPLORE</strong>
+        <a href="../index.html">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <strong>LEGAL</strong>
+        <a href="#">Privacy</a>
+        <a href="#">Disclaimer</a>
+      </div>
+      <div>
+        <strong>Site Info</strong>
+        <a href="#">Site Map</a>
+      </div>
+      <div>
+        <strong>ANALOGUE Developers</strong>
+        <p>Crafted for learners, mentors, and Analyzer.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Github <img src="../svgs/github.svg" alt="github" /></a>
+        <a href="#">Discord <img src="../svgs/discord.svg" alt="discord" /></a>
+        <a href="#">t.me <img src="../svgs/telegram.svg" alt="telegram" /></a>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+  <script src="../shared/guest.js"></script>
+  <script src="../shared/activity.js"></script>
+  <script src="../shared/guard.js"></script>
+  <script src="../shared/courses-data.js"></script>
+  <script src="../shared/course-counts.js"></script>
+  <script src="assessments.js"></script>
+</html>
+
+
+

@@ -1,0 +1,533 @@
+/* Landing page style - SIMPLE GUIDE FOR BEGINNERS:
+   Each box below has ONE line per setting.
+   Nothing is packed in one line.
+   .nav        = top bar (logo left, buttons right)
+   .nav-links  = middle links (Roles, Features, How it works)
+   .nav-cta    = TOP-RIGHT BUTTONS box (holds Login + Get Started)
+   .link       = plain Login text
+   .btn        = orange Get Started button
+   .btn-big    = bigger button (use together: class="btn btn-big")
+   .btn-grey   = outline button (use together: class="btn btn-grey")
+   .hero       = big title area below nav
+   .hero-btns  = MAIN BUTTONS box under title
+   .stats      = 12 / 84% / 58 numbers row
+   .section    = each part below hero
+   .section-soft = grey background part
+   .cards      = 3 boxes row
+   .cards-small = 4 small boxes row
+   .steps      = 1-2-3 list
+   .steps-btn  = button below steps list
+   .footer     = bottom grey area
+   .card-link  = makes a whole role card clickable
+*/
+
+:root {
+  --ink: #111;
+  --muted: #727272;
+  --line: #e8e8e8;
+  --surface: #fff;
+  --soft: #f8f8f8;
+  --accent: #f45b45;
+  --accent-light: #f45b45cc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* SMOOTH JUMP when clicking See roles (instead of hard jump) */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+/* SMALL RED TITLE above headings */
+.eyebrow {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* PS BADGE (small SIH identity line under the eyebrow) */
+.ps-badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 14px;
+  padding-right: 14px;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+/* TOP BAR (sticky header, stays on top while scrolling) */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 64px;
+  padding-right: 64px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
+}
+
+/* LOGO (left side) */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  font-size: 18px;
+}
+
+/* LOGO IMAGE (the picture before Capacity Connect text) */
+.logo-icon {
+  display: grid;
+  place-items: center;
+}
+
+.logo-icon img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* MIDDLE LINKS (center of top bar) */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* TOP-RIGHT BUTTONS = Login text + Get Started button (header) */
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+/* Plain Login text */
+.nav-cta .link {
+  color: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* DARK BUTTON (Get Started) - use everywhere, no color */
+.btn {
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+/* Bigger button */
+.btn-big {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 28px;
+  padding-right: 28px;
+  font-size: 16px;
+}
+
+/* OUTLINE BUTTON (See roles) - same size as Get Started, but white with dark border */
+.btn-grey {
+  background: #fff;
+  color: #111;
+  border-top: 2px solid #111;
+  border-bottom: 2px solid #111;
+  border-left: 2px solid #111;
+  border-right: 2px solid #111;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 26px;
+  padding-right: 26px;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.btn-grey:hover {
+  background: #f3f3f3;
+}
+
+/* BIG TITLE AREA below nav */
+.hero {
+  padding-top: 72px;
+  padding-bottom: 40px;
+  padding-left: 100px;
+  padding-right: 100px;
+  max-width: 1100px;
+}
+
+/* Big title text */
+.hero h1 {
+  font-size: 60px;
+  letter-spacing: -2px;
+  line-height: 1.02;
+  margin: 0;
+}
+
+/* Small grey text under title */
+.intro {
+  color: #666;
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+/* MAIN BUTTONS = big Get Started + See roles buttons under title */
+.hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+/* NUMBERS ROW (courses, growth, trainers) */
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.stats strong {
+  display: block;
+  font-size: 32px;
+}
+
+.stats small {
+  color: var(--muted);
+}
+
+/* CLICKABLE STAT (number links to its page) */
+.stat-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* EACH PART below hero. scroll-margin-top stops See-roles
+   jump BELOW sticky header so title stays visible. */
+.section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding-left: 100px;
+  padding-right: 100px;
+  max-width: 1100px;
+  scroll-margin-top: 84px;
+}
+
+/* Same stop position for the roles part */
+#roles {
+  scroll-margin-top: 84px;
+}
+
+/* Grey background part */
+.section-soft {
+  background: var(--soft);
+  max-width: none;
+}
+
+/* Title inside each part */
+.section h2 {
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* ROLE GROUP LABEL (For Trainee / For Trainer, above each card row) */
+.role-tag {
+  font-weight: 800;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 28px;
+  margin-bottom: 14px;
+}
+
+/* Small grey line under the title */
+.section-sub {
+  color: var(--muted);
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+/* BOXES ROW (3 role boxes, same height) */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* BOXES ROW with 4 small boxes */
+.cards-small {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 18px;
+}
+
+/* One white box (role boxes + small feature boxes share this look) */
+.cards article,
+.cards-small article {
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  padding: 24px;
+  background: #fff;
+}
+
+/* Box title */
+.cards h3,
+.cards-small h3 {
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+/* Box text */
+.cards p,
+.cards-small p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ICON BOX on top of each card - same size box so all icons line up */
+.card-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: var(--soft);
+  border-radius: 12px;
+}
+
+/* ICON PICTURE inside the box */
+.card-icon img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* WHOLE CARD CLICKABLE - the link that wraps a full role card */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+/* Hand pointer when hovering a clickable card */
+.card-link article {
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Darker border on hover so you know it is clickable */
+.card-link:hover article {
+  border-color: #999;
+}
+
+/* 1-2-3 STEPS LIST */
+.steps {
+  line-height: 2;
+  color: #444;
+  padding-left: 20px;
+  max-width: 640px;
+}
+
+/* Button right below steps list */
+.steps-btn {
+  margin-top: 16px;
+}
+
+/* BOTTOM GREY AREA */
+.footer {
+  background: #f6f6f7;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 48px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding-left: 100px;
+  padding-right: 100px;
+  flex-wrap: wrap;
+}
+
+/* Footer headings */
+.footer strong {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+/* Footer links */
+.footer a {
+  display: block;
+  font-size: 13px;
+  color: inherit;
+  text-decoration: none;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* Footer plain text */
+.footer p {
+  display: block;
+
+  font-size: 13px;
+  color: #666;
+  
+  margin: 0 0 12px 0;
+}
+
+/* Social icons at right */
+.footer-links {
+  margin-left: 440px;
+
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin: 0;
+}
+
+.footer-links img {
+  width: 20px;
+  height: 20px;
+}
+
+.sign{
+  position: absolute;
+  right: 400px;
+}
+
+
+/* TABLET (small laptop / big mobile) */
+@media (max-width: 850px) {
+  .nav {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards-small {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+/* PHONE */
+@media (max-width: 560px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-small {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-cta .link {
+    display: none;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer > div {
+    margin-bottom: 24px;
+  }
+
+  .footer-links {
+    margin-left: 0;
+  }
+}
+
+/* CLICK FEEL: buttons press down a little when clicked (all buttons on this page) */
+.btn:active {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}

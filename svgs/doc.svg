@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Word doc mark: page with title bar and lines -->
+  <path fill="#111111" d="M14 4 L50 4 L50 60 L14 60 Z" />
+  <rect fill="#f8f8f8" x="21" y="12" width="22" height="6" rx="2" />
+  <rect fill="#f8f8f8" x="21" y="24" width="22" height="4" rx="2" />
+  <rect fill="#f8f8f8" x="21" y="32" width="22" height="4" rx="2" />
+  <rect fill="#f8f8f8" x="21" y="40" width="22" height="4" rx="2" />
+  <rect fill="#f8f8f8" x="21" y="48" width="14" height="4" rx="2" />
+</svg>

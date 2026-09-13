@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Trainee mark: graduation cap (student) -->
+  <path fill="#111111" d="M32 12 L4 24 L32 36 L52 27 L52 40 L56 40 L56 25 L32 12 Z" />
+  <path fill="#111111" d="M18 35 L18 45 C18 50 25 54 32 54 C39 54 46 50 46 45 L46 35 L32 42 L18 35 Z" />
+  <rect fill="#f45b45" x="52" y="40" width="4" height="12" rx="2" />
+  <circle fill="#f45b45" cx="54" cy="54" r="3" />
+</svg>

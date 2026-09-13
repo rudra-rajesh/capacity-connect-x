@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capacity Connect — Trainer Courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../shared/guest.css" />
+  </head>
+
+  <body>
+    <!-- mobile menu button: shows sidebar on small screens -->
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <!-- top-right user card: role filled by script.js from login -->
+    <div class="user-card">
+      <div class="avatar" id="avatarLetter">A</div>
+      <div class="user-info">
+        <strong>ANALOGUE <span class="user-type" id="roleBadge">| trainer</span></strong>
+        <small id="userEmail">analogue@mail.com</small>
+      </div>
+      <a class="logout-link" href="../auth/index.html" id="logoutLink">Logout</a>
+    </div>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Trainer navigation">
+        <div>
+          <a class="workspace" href="../index.html">
+            <span class="workspace-icon"><img src="../svgs/trainer-logo.svg" alt="trainer logo" /></span>
+            Capacity Connect
+          </a>
+
+          <label class="srch">
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search" />
+            <span class="srch-icon" aria-hidden="true"><img src="../svgs/SearchIcon.svg" alt="search" /></span>
+          </label>
+
+          <!-- TRAINER main nav -->
+          <nav class="side-nav" id="mainNav">
+            <a href="index.html"><span>⌂</span> Dashboard</a>
+            <a class="active" href="courses.html"><span><img src="../svgs/buffercopy.svg" alt="" /></span> My Batches </a>
+            <a href="../shared/more.html"><span>▥</span> Create Assessment</a>
+            <a href="../shared/more.html"><span>▱</span> Evaluate</a>
+            <a href="../shared/more.html"><span>♧</span> Resources</a>
+          </nav>
+
+          <p class="nav-label">Docs</p>
+
+          <nav class="side-nav">
+            <a href="../shared/more.html"><span><img src="../svgs/reportIcon.svg" alt="reports" /></span> Reports</a>
+            <a href="../shared/more.html"><span><img src="../svgs/categories-icon.svg" alt="more" /></span> More</a>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <nav class="side-nav utility-nav">
+            <a href="profile.html"><span>◉</span> Profile</a>
+            <a href="../shared/settings.html"><span>⚙</span> Settings</a>
+          </nav>
+        </div>
+      </aside>
+
+      <main class="dashboard">
+        <p class="eyebrow">TRAINER · COURSES</p>
+        <h1>Course Batches</h1>
+        <p class="intro">
+          Every course below runs as your batch. Open <b>View</b> for full details, topics and resources.
+        </p>
+
+        <!-- COURSE CARDS: drawn by courses.js from shared/courses-data.js.
+             Read-only here: trainees enroll on their own side. -->
+        <section class="course-grid" id="courseGrid" aria-label="Course list"></section>
+        <div class="empty-state" id="courseEmpty" hidden>No courses right now. Admin adds them.</div>
+      </main>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="explore">
+        <strong>EXPLORE</strong>
+        <a href="../index.html">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <strong>LEGAL</strong>
+        <a href="#">Privacy</a>
+        <a href="#">Disclaimer</a>
+      </div>
+      <div>
+        <strong>Site Info</strong>
+        <a href="#">Site Map</a>
+      </div>
+      <div>
+        <strong>ANALOGUE Developers</strong>
+        <p>Crafted for learners, mentors, and Analyzer.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Github <img src="../svgs/github.svg" alt="github" /></a>
+        <a href="#">Discord <img src="../svgs/discord.svg" alt="discord" /></a>
+        <a href="#">t.me <img src="../svgs/telegram.svg" alt="telegram" /></a>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+  <script src="../shared/guest.js"></script>
+  <script src="../shared/activity.js"></script>
+  <script src="../shared/guard.js"></script>
+  <script src="../shared/courses-data.js"></script>
+  <script src="../shared/course-counts.js"></script>
+  <script src="courses.js"></script>
+</html>
+

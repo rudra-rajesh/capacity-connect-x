@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Video file mark: play button in a rounded screen -->
+  <rect fill="none" stroke="#111111" stroke-width="5" x="7" y="14" width="50" height="36" rx="8" />
+  <path fill="#111111" d="M27 24 L44 32 L27 40 Z" />
+</svg>

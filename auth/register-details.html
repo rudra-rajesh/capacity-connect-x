@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capacity Connect — Your details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+  <main class="auth-wrap">
+    <div class="auth-card">
+      <!-- logo back to landing -->
+      <a class="auth-logo" href="../index.html"><span class="logo-icon"><img src="../svgs/logo.svg" alt="Capacity Connect logo" /></span> Capacity Connect</a>
+      <h1>Your details</h1>
+      <p class="auth-sub" id="detailsSub">Step 2 of 2 · Basic details</p>
+
+      <!-- STEP DOTS: filled dot = current step -->
+      <div class="steps-dots" aria-hidden="true">
+        <span class="dot done"></span>
+        <span class="dot now"></span>
+      </div>
+
+      <!-- MESSAGE TEXT on the upper side: plain red/green text, no box -->
+      <p class="auth-msg" id="authMsg" hidden></p>
+
+      <form id="detailsForm">
+        <!-- BASIC DETAILS -->
+        <p class="form-title">Basic details</p>
+
+        <label class="field">
+          <span>Full Name</span>
+          <input type="text" id="regName" placeholder="Your name" required />
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span>Age</span>
+            <input type="number" id="regAge" min="5" max="120" placeholder="18" required />
+          </label>
+          <label class="field">
+            <span> Gender </span>
+            <select id="regGen" required>
+              <option value="">Select</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Phone</span>
+          <input type="tel" id="regPhone" placeholder="98765 43210" required />
+        </label>
+
+        <label class="field">
+          <span>Organization / College</span>
+          <input type="text" id="regOrg" placeholder="Your college or company" required />
+        </label>
+
+        <!-- QUALIFICATION: school/college background -->
+        <p class="form-title">Qualification</p>
+
+        <label class="field">
+          <span>Highest Qualification</span>
+          <select id="regQual" required>
+            <option value="">Select</option>
+            <option>High School</option>
+            <option>Diploma</option>
+            <option>Bachelor's</option>
+            <option>Master's</option>
+            <option>PhD</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span>Field of Study</span>
+            <input type="text" id="regField" placeholder="e.g. Computer Science" required />
+          </label>
+          <label class="field">
+            <span>Year of Passing</span>
+            <input type="number" id="regYear" min="1980" max="2035" placeholder="2025" required />
+          </label>
+        </div>
+
+        <!-- DECLARATION: must tick to continue, like real forms -->
+        <label class="check-row">
+          <input type="checkbox" id="regAgree" required />
+          <span>I declare the details above are true.</span>
+        </label>
+
+        <!-- BACK + SUBMIT -->
+        <div class="btn-row">
+          <a class="back-btn" href="register.html">← Back</a>
+          <button type="submit" class="login-btn" id="detailsBtn">Request approval</button>
+        </div>
+      </form>
+
+      <p class="auth-switch">Have an account? <a href="index.html">Login</a></p>
+      <p class="auth-note">Your ID is made for you. You can log in after approval.</p>
+    </div>
+  </main>
+  <script src="../shared/activity.js"></script>
+<script src="register-details.js"></script>
+</body>
+</html>

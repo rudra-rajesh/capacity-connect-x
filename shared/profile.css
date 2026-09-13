@@ -1,0 +1,264 @@
+/* Profile page styles - shared by all roles.
+   One line per setting, beginner-simple. */
+
+/* BIG PHOTO CIRCLE */
+.profile-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #202020, #aaa);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 38px;
+  font-weight: 700;
+  overflow: hidden;
+  flex: none;
+}
+
+/* UPLOADED PHOTO inside the circle */
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PROFILE TOP ROW (photo + name + browse, inside the card) */
+.profile-top {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+/* NAME + ID lines */
+.profile-top h2 {
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 24px;
+}
+
+.profile-top small {
+  display: block;
+  color: #727272;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* BROWSE PHOTO BUTTON */
+.browse-btn {
+  display: inline-block;
+  border: 2px solid #111;
+  border-radius: 8px;
+  background: #fff;
+  color: #111;
+  font-size: 13px;
+  font-weight: 700;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* PROFILE CARD (open layout, no box) */
+.profile-box {
+  border: none;
+  background: transparent;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 18px;
+}
+
+/* LABEL + INPUT reuse dashboard look */
+.profile-box .field {
+  margin-bottom: 12px;
+}
+
+/* INPUT LABEL */
+.field {
+  display: block;
+}
+
+/* INPUT BOXES (text, number, dropdown) */
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 2px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: "DM Sans", Arial, sans-serif;
+  outline: 0;
+  background: #fff;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #111;
+}
+
+.field span {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* SAVE BUTTON (dark, no color) */
+.save-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 22px;
+  padding-right: 22px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* SMALL NOTE under buttons */
+.save-note {
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.save-note.ok {
+  color: #1c7a3d;
+}
+
+.save-note.no {
+  color: #b3261e;
+}
+
+/* LOCKED ROW (plain row, no box) */
+.locked-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: none;
+  background: transparent;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 4px;
+}
+
+/* LOCKED VALUE */
+.locked-row b {
+  font-size: 15px;
+}
+
+/* LOCKED LABEL */
+.locked-row span {
+  display: block;
+  font-size: 12px;
+  color: #727272;
+}
+
+/* SMALL OUTLINE BUTTON (request / send code) */
+.mini-btn {
+  background: #fff;
+  border: 2px solid #111;
+  border-radius: 8px;
+  color: #111;
+  font-size: 13px;
+  font-weight: 700;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  cursor: pointer;
+  flex: none;
+}
+
+/* PENDING BADGE (waiting for admin) */
+.pending-badge {
+  background: #fff3e0;
+  color: #b26a00;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex: none;
+}
+
+/* INPUT inside a locked row */
+.row-input {
+  width: 100%;
+  border: 2px solid #e8e8e8;
+  border-radius: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+  font-family: "DM Sans", Arial, sans-serif;
+  margin-top: 4px;
+  outline: 0;
+  background: #fff;
+}
+
+.row-input:focus {
+  border-color: #111;
+}
+
+.row-input:disabled {
+  background: #f8f8f8;
+  color: #727272;
+}
+
+/* SMALL GREY MINI TITLE (Qualification label inside the form) */
+.hint-line {
+  color: #727272;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+/* GATE NOTE (guest message, hidden until needed) */
+.gate-note {
+  background: #fff3e0;
+  border: 1px solid #e6c47a;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 14px;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.gate-note a {
+  font-weight: 700;
+  color: #111;
+}
+
+/* PHONE SCREENS: browse button takes its own line */
+@media (max-width: 560px) {
+  .browse-btn {
+    margin-left: 0;
+  }
+}
+
+/* CLICK FEEL: buttons press down a little when clicked (all buttons on this page) */
+.save-btn:active,
+.mini-btn:active,
+.browse-btn:active {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capacity Connect — Create account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+  <main class="auth-wrap">
+    <div class="auth-card">
+      <!-- logo back to landing -->
+      <a class="auth-logo" href="../index.html"><span class="logo-icon"><img src="../svgs/logo.svg" alt="Capacity Connect logo" /></span> Capacity Connect</a>
+      <h1>Create account</h1> 
+      <p class="auth-sub"> Step 1 of 2 · Your login details </p>
+
+      <!-- STEP DOTS: filled dot = current step -->
+      <div class="steps-dots" aria-hidden="true">
+        <span class="dot now"></span>
+        <span class="dot"></span>
+      </div>
+
+      <!-- 1. TOP selection for all three roles -->
+      <div class="role-select" role="tablist" aria-label="Select role">
+        <button type="button" class="role-btn active" data-role="trainee" role="tab" aria-selected="true">Trainee</button>
+        <button type="button" class="role-btn" data-role="trainer" role="tab" aria-selected="false">Trainer</button>
+        <button type="button" class="role-btn" data-role="admin" role="tab" aria-selected="false">Admin</button>
+      </div>
+      <p class="role-hint" id="roleHint">Registering as <b id="roleName"> Trainee </b> </p>
+
+      <!-- MESSAGE TEXT on the upper side: plain red/green text, no box -->
+      <p class="auth-msg" id="authMsg" hidden></p>
+
+      <!-- 2. Email + password only. Details go on the next page. -->
+      <form id="regForm">
+        <label class="field">
+          <span> Email </span>
+          <input type="email" id="email" placeholder="you@mail.com" required />
+        </label>
+        <label class="field">
+          <span> Password </span>
+          <input type="password" id="password" placeholder="••••••••" required minlength="4" />
+        </label>
+
+        <!-- 3. Next page -->
+        <button type="submit" class="login-btn" id="regBtn">Continue →</button>
+      </form>
+
+      <p class="auth-switch"> Have an account? <a href="index.html"> Login </a></p>
+    </div>
+  </main>
+  <script src="../shared/activity.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

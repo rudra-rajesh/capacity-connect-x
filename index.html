@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capacity Connect — Learn, Teach, Manage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- TOP BAR: logo (left) | links (middle) | login + get started (right) -->
+  <header class="nav">
+    <a class="logo" href="index.html"><span class="logo-icon"><img src="svgs/logo.svg" alt="Capacity Connect logo" /></span> Capacity Connect</a>
+    <nav class="nav-links">
+      <a href="#roles">Roles</a>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+    </nav>
+    <!-- TOP-RIGHT BUTTONS BOX: gap between Login and Get Started is in style.css (.nav-cta) -->
+    <div class="nav-cta">
+      <a class="link" href="auth/index.html">Login</a>
+      <a class="btn" href="auth/index.html">Get Started</a>
+    </div>
+  </header>
+
+  <!-- BIG TITLE AREA -->
+  <main class="hero">
+    <p class="eyebrow">WELCOME TO CAPACITY CONNECT</p>
+    <p class="ps-badge"> Ministry of Earth Sciences </p>
+    <h1>Build network.
+      <br/> 
+      Connect and grow skills. </h1>
+    <p class="intro">One simple platform for <b>trainees</b>, <b>trainers</b> and <b>admins</b> — courses, assessments and management without any interruption.</p>
+    
+    
+    <!-- MAIN BUTTONS BOX under title -->
+    <div class="hero-btns">
+      <a class="btn btn-big" href="auth/index.html">Get Started</a>
+      <a class="btn btn-grey" href="#roles">Visit Roles</a>
+    </div>
+    <div class="stats">
+      <div>
+        <a class="stat-link" href="trainee/courses.html">
+          <strong data-course-count>6</strong>
+          <small> Active courses </small>
+        </a>
+      </div>
+      <div>
+        <strong> 76% </strong>
+        <small>Monthly growth </small>
+      </div>
+      <div>
+        <strong> 10 </strong>
+        <small> Expert Trainers </small></div>
+    </div>
+  </main>
+
+  <!-- ROLES: three clickable cards, one per role -->
+  <section class="section" id="roles">
+    <p class="eyebrow">MEET THE THREE ROLES</p>
+    <h2>Choose your role</h2>
+    <p class="section-sub">Click a card to open its dashboard.</p>
+    <div class="cards">
+      <!-- WHOLE CARD is the link: click anywhere to open the page -->
+      <a class="card-link" href="trainee/index.html">
+        <article>
+          <span class="card-icon"><img src="svgs/trainee-logo.svg" alt="trainee icon" /></span>
+          <h3>Trainee</h3>
+          <p>Join courses, take assessments and earn certificates.</p>
+        </article>
+      </a>
+      <a class="card-link" href="trainer/index.html">
+        <article>
+          <span class="card-icon"><img src="svgs/trainer-logo.svg" alt="trainer icon" /></span>
+          <h3>Trainer</h3>
+          <p>Manage batches, create assessments, evaluate trainees and track progress.</p>
+        </article>
+      </a>
+      <a class="card-link" href="admin/index.html">
+        <article>
+          <span class="card-icon"><img src="svgs/admin-logo.svg" alt="admin icon" /></span>
+          <h3>Admin</h3>
+          <p>Oversee users, approve courses, issue certificates and view reports.</p>
+        </article>
+      </a>
+    </div>
+  </section>
+
+  <!-- features -->
+  <section class="section section-soft" id="features">
+    <p class="eyebrow">WHAT WE GET HERE </p>
+    <h2>Simple and precise, built for learning teams and mentor</h2>
+
+    <p class="role-tag">For Trainee</p>
+
+    <div class="cards-small">
+      <a class="card-link" href="trainee/courses.html">
+        <article>
+          <h3>Courses</h3>
+          <p data-course-text="active-line">6 active, 2 updated this week.</p>
+        </article>
+      </a>
+      <a class="card-link" href="trainee/assessments.html">
+        <article>
+          <h3>Assessments</h3>
+          <p>Attempt, score and get certificate in one flow.</p>
+        </article>
+      </a>
+      <article>
+        <h3>Expert Trainers</h3>
+        <p>10 mentors guiding every batch.</p>
+      </article>
+      <article>
+        <h3>Reports</h3>
+        <p>Monthly insights at a glance.</p>
+      </article>
+    </div>
+
+    <p class="role-tag">For Trainer</p>
+
+    <div class="cards-small">
+      <article>
+        <h3>Batches</h3>
+        <p data-course-text="active-line">6 active, 2 updated this week.</p>
+      </article>
+      <article>
+        <h3>Assessments</h3>
+        <p>Create, assign and evaluate in one flow.</p>
+      </article>
+      <article>
+        <h3>Trainees</h3>
+        <p>340 learners growing in every batch.</p>
+      </article>
+      <article>
+        <h3>Reports</h3>
+        <p>Batch insights at a glance.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- how -->
+  <section class="section" id="how">
+    <p class="eyebrow">HOW IT WORKS</p>
+    <h2>Get started in 3 steps</h2>
+    <ol class="steps">
+      <li><b> Register / Login </b> — open login, select Trainee / Trainer / Admin on top.</li>
+      <li><b> Open dashboard </b> — sidebar layout, role-specific nav and cards.</li>
+      <li><b> Explore </b> - search, switch nav, click Get Started to see activity.</li>
+    </ol>
+    <a class="btn btn-big steps-btn" href="auth/index.html"> Go </a>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <strong>EXPLORE</strong>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </div>
+    <div>
+      <strong>LEGAL</strong>
+        <a href="#">Privacy</a>
+        <a href="#">Disclaimer</a>
+    </div>
+     <div>
+      <strong> SITE </strong>
+        <a href="#"> Site Map </a>
+        <a href="#" style="letter-spacing: .8px;"> CSE </a>
+    </div>
+    
+    <div class="sign">
+      <strong> ANALOGUE CODERS </strong>
+      <p> Crafted for learners, mentors, and Analyzer. </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">Github <img src="svgs/github.svg" alt="github" /></a>
+      <a href="#">Discord <img src="svgs/discord.svg" alt="discord" /></a>
+      <a href="#">t.me <img src="svgs/telegram.svg" alt="telegram" /></a>
+    </div>
+  </footer>
+  <script src="shared/courses-data.js"></script>
+  <script src="shared/course-counts.js"></script>
+  <script>
+    // Hide Get Started links when already logged in (guests still see them)
+    try {
+      if (localStorage.getItem("cc_role")) {
+        var links = document.querySelectorAll(".nav-cta .btn, .hero-btns .btn-big");
+        for (var i = 0; i < links.length; i++) {
+          links[i].style.display = "none";
+        }
+      }
+    } catch (e) {}
+  </script>
+</body>
+</html>
+

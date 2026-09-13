@@ -1,0 +1,209 @@
+/* Guest login overlay - shared by all role pages.
+   One line per setting, beginner-simple.
+   Colors match auth.css so the panel looks like the login page. */
+
+/* DARK BACKGROUND covering the screen */
+.guest-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+/* HIDDEN state (overlay off) */
+.guest-overlay[hidden] {
+  display: none;
+}
+
+/* WHITE LOGIN PANEL */
+.guest-panel {
+  background: #fff;
+  border-radius: 16px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  padding-left: 26px;
+  padding-right: 26px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* PANEL TITLE ROW (text + X button) */
+.guest-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.guest-head h2 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* CLOSE (X) BUTTON */
+.guest-close {
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+/* SMALL GREY LINE under title */
+.guest-sub {
+  color: #727272;
+  font-size: 13px;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+/* ROLE TABS BOX (Trainee | Trainer | Admin) */
+.guest-roles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  background: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 6px;
+  margin-bottom: 14px;
+}
+
+/* ONE ROLE TAB */
+.guest-role {
+  border: 0;
+  border-radius: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "DM Sans", Arial, sans-serif;
+  background: transparent;
+  color: #727272;
+  cursor: pointer;
+}
+
+/* SELECTED TAB (dark) */
+.guest-role.active {
+  background: #111;
+  color: #fff;
+}
+
+/* INPUT LABEL */
+.guest-field {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.guest-field span {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* INPUT BOX */
+.guest-field input {
+  width: 100%;
+  border: 2px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: "DM Sans", Arial, sans-serif;
+  outline: 0;
+}
+
+.guest-field input:focus {
+  border-color: #111;
+}
+
+/* LOGIN + DEMO ROW (side by side) */
+.guest-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* LOGIN BUTTON (dark, no color, fills the row) */
+.guest-login {
+  flex: 1;
+  background: #111;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+  margin-top: 0;
+}
+
+/* DEMO BUTTON (outline, fills details for the selected tab) */
+.guest-demo {
+  flex: none;
+  background: #fff;
+  color: #111;
+  border: 2px solid #111;
+  border-radius: 10px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 18px;
+  padding-right: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+  margin-top: 0;
+}
+
+/* MESSAGE TEXT on the upper side (plain colored text, no box) */
+.guest-msg {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.guest-msg.no {
+  color: #b3261e;
+}
+
+.guest-msg.ok {
+  color: #1c7a3d;
+}
+
+/* REGISTER LINK LINE */
+.guest-switch {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 14px;
+  margin-bottom: 0;
+}
+
+.guest-switch a {
+  color: #111;
+  font-weight: 700;
+}
+
+/* CLICK FEEL: buttons press down a little when clicked (all buttons on this page) */
+.guest-login:active,
+.guest-role:active,
+.guest-close:active {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}

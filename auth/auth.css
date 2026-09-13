@@ -1,0 +1,332 @@
+/* Auth page - reuses dashboard colors, beginner-simple */
+:root {
+  --ink: #111;
+  --muted: #727272;
+  --line: #e8e8e8;
+  --surface: #fff;
+  --soft: #f8f8f8;
+  --accent: #f45b45;
+  --accent-light: #f45b45cc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "DM Sans", Arial, sans-serif;
+  background: var(--soft);
+  color: var(--ink);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+/* WRAPPER that holds the card + demo button side by side */
+.auth-layout {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 510px;
+}
+
+.auth-wrap {
+  width: 100%;
+  max-width: 440px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* DEMO BUTTON on the side of the card (vertical on desktop) */
+.demo-side-btn {
+  border: 2px solid #111;
+  background: #fff;
+  color: #111;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "DM Sans", Arial, sans-serif;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 1px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 12px;
+  padding-right: 12px;
+  cursor: pointer;
+  margin-top: 80px;
+  flex: none;
+}
+
+.demo-side-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* PHONE: demo button goes below the card and becomes horizontal */
+@media (max-width: 560px) {
+  .auth-layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .demo-side-btn {
+    writing-mode: horizontal-tb;
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.auth-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px 30px;
+}
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+/* LOGO IMAGE on login card (one line per setting) */
+.auth-logo .logo-icon {
+  display: grid;
+  place-items: center;
+}
+
+.auth-logo .logo-icon img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.auth-card h1 { margin: 0; font-size: 30px; letter-spacing: -1px; }
+.auth-sub { color: var(--muted); margin: 6px 0 18px; }
+
+/* 1. top role selector */
+.role-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.role-btn {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 4px;
+  font: 700 14px "DM Sans", Arial, sans-serif;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.role-btn.active {
+  background: #111;
+  color: #fff;
+}
+
+.role-hint { font-size: 13px; color: var(--muted); margin: 12px 2px 18px; }
+.role-hint b { color: var(--ink); text-transform: capitalize; }
+
+/* 2. inputs (one line per setting, beginner-simple) */
+.field {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.field span {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: "DM Sans", Arial, sans-serif;
+  outline: 0;
+}
+
+.field input:focus {
+  border-color: var(--ink);
+}
+
+/* DROPDOWN (Sex field) - same look as inputs */
+.field select {
+  width: 100%;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: "DM Sans", Arial, sans-serif;
+  background: #fff;
+  outline: 0;
+}
+
+/* AGE + SEX side by side */
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* MESSAGE TEXT on the upper side (plain colored text, no box) */
+.auth-msg {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.auth-msg.ok {
+  color: #1c7a3d;
+}
+
+.auth-msg.no {
+  color: #b3261e;
+}
+
+/* 3. login button */
+.login-btn {
+  width: 100%;
+  background: #111;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 13px;
+  font: 700 15px "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+  margin-top: 6px;
+  text-transform: capitalize;
+}
+.login-btn:hover { background: #333; }
+
+.auth-switch { font-size: 13px; text-align: center; margin: 16px 0 6px; }
+.auth-switch a { color: var(--ink); font-weight: 700; }
+.auth-note { font-size: 12px; color: var(--muted); text-align: center; margin: 0; }
+
+/* STEP DOTS (step 1 / step 2 progress) */
+.steps-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* ONE DOT */
+.dot {
+  width: 36px;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--line);
+}
+
+/* CURRENT STEP DOT (orange) */
+.dot.now {
+  background: var(--accent);
+}
+
+/* FINISHED STEP DOT (dark) */
+.dot.done {
+  background: var(--ink);
+}
+
+/* SMALL SECTION TITLE inside details form */
+.form-title {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+/* DECLARATION ROW (checkbox + text) */
+.check-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.check-row input {
+  width: 18px;
+  height: 18px;
+  margin-top: 0;
+  flex: none;
+}
+
+/* BACK + SUBMIT ROW */
+.btn-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* BACK LINK (looks like a small button) */
+.back-btn {
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 18px;
+  padding-right: 18px;
+  flex: none;
+}
+
+/* SUBMIT fills the rest of the row */
+.btn-row .login-btn {
+  flex: 1;
+  margin-top: 0;
+}
+
+/* LINK that looks like a button (placeholder pages) */
+a.login-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .auth-card { padding: 24px 20px; }
+}
+
+/* CLICK FEEL: buttons press down a little when clicked (all buttons on this page) */
+.login-btn:active,
+.demo-side-btn:active,
+.back-btn:active,
+.role-btn:active {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}

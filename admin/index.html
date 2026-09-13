@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capacity Connect — Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../shared/guest.css" />
+    <link rel="stylesheet" href="../shared/activity.css" />
+  </head>
+
+  <body>
+    <!-- mobile menu button: shows sidebar on small screens -->
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <!-- top-right user card: role filled by script.js from login -->
+    <div class="user-card">
+      <div class="avatar" id="avatarLetter">A</div>
+      <div class="user-info">
+        <strong>ANALOGUE <span class="user-type" id="roleBadge">| admin</span></strong>
+        <small id="userEmail">analogue@mail.com</small>
+      </div>
+      <a class="logout-link" href="../auth/index.html" id="logoutLink">Logout</a>
+    </div>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Admin navigation">
+        <div>
+          <a class="workspace" href="../index.html">
+            <span class="workspace-icon"><img src="../svgs/admin-logo.svg" alt="admin logo" /></span>
+            Capacity Connect
+          </a>
+
+          <label class="srch">
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search" />
+            <span class="srch-icon" aria-hidden="true"><img src="../svgs/SearchIcon.svg" alt="search" /></span>
+          </label>
+
+          <!-- ADMIN main nav: EDIT ONLY labels here for other roles -->
+          <nav class="side-nav" id="mainNav">
+            <a class="active" href="index.html"><span>⌂</span> Dashboard</a>
+            <a href="users.html"><span><img src="../svgs/buffercopy.svg" alt="" /></span> Users</a>
+            <a href="approvals.html"><span>▥</span> Approvals <span class="count-badge" id="navBadge" hidden>0</span></a>
+            <a href="../shared/more.html"><span>▥</span> Analytics</a>
+            <a href="courses.html"><span>♧</span> Courses</a>
+          </nav>
+
+          <p class="nav-label">Docs</p>
+
+          <nav class="side-nav">
+            <a href="../shared/more.html"><span><img src="../svgs/reportIcon.svg" alt="reports" /></span> Reports</a>
+            <a href="../shared/more.html"><span><img src="../svgs/categories-icon.svg" alt="more" /></span> More</a>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <nav class="side-nav utility-nav">
+            <a href="profile.html"><span>◉</span> Profile</a>
+            <a href="../shared/settings.html"><span>⚙</span> Settings</a>
+          </nav>
+        </div>
+        <!-- FIX: closed sidebar-bottom div (was missing before) -->
+      </aside>
+
+      <main class="dashboard">
+        <p class="eyebrow">WELCOME · ADMIN</p>
+        <h1>Good evening, Admin</h1>
+        <p class="intro">
+          Oversee <b>users</b>, <b>approvals</b> and platform growth without disturbance. Manage courses, certificates and reports. Let's <a href="approvals.html">get started!</a>
+        </p>
+        <button class="get-started-btn" id="startBtn">Get Started</button>
+
+        <section class="dashboard-grid" aria-label="Admin overview">
+          <article>
+            <span class="card-icon">◫</span>
+            <p>Total Users</p>
+            <strong> 4 </strong>
+            <small> 1 joined this week </small>
+          </article>
+
+          <article>
+            <span class="card-icon">↗</span>
+            <p> Pending Approval s</p>
+            <strong> 1 </strong>
+            <small>5 courses awaiting review</small>
+          </article>
+
+          <article>
+            <span class="card-icon">◌</span>
+            <p>Courses Live</p>
+            <strong data-course-count>6</strong>
+            <small>2 updated this week</small>
+          </article>
+        </section>
+
+        <section class="activity">
+          <div class="section-heading">
+            <div>
+            <p class="eyebrow">ADMIN ACTIVITY</p>
+            <h2>Platform at a glance</h2>
+            </div>
+            <a href="approvals.html">View all →</a>
+          </div>
+          <div class="empty-state" id="activityBox">
+            Your latest workspace activity will appear here.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="explore">
+        <strong>EXPLORE</strong>
+        <a href="../index.html">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <strong>LEGAL</strong>
+        <a href="#">Privacy</a>
+        <a href="#">Disclaimer</a>
+      </div>
+      <div>
+        <strong>Site Info</strong>
+        <a href="#">Site Map</a>
+      </div>
+      <div>
+        <strong>ANALOGUE Developers</strong>
+        <p>Crafted for learners, mentors, and Analyzer.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Github <img src="../svgs/github.svg" alt="github" /></a>
+        <a href="#">Discord <img src="../svgs/discord.svg" alt="discord" /></a>
+        <a href="#">t.me <img src="../svgs/telegram.svg" alt="telegram" /></a>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+  <script src="../shared/guest.js"></script>
+  <script src="../shared/activity.js"></script>
+  <script src="../shared/guard.js"></script>
+  <script src="../shared/courses-data.js"></script>
+  <script src="../shared/course-counts.js"></script>
+</html>
+
+
+

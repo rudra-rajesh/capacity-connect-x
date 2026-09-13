@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capacity Connect — Admin Courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../shared/guest.css" />
+  </head>
+
+  <body>
+    <!-- mobile menu button: shows sidebar on small screens -->
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <!-- top-right user card: role filled by script.js from login -->
+    <div class="user-card">
+      <div class="avatar" id="avatarLetter">A</div>
+      <div class="user-info">
+        <strong>ANALOGUE <span class="user-type" id="roleBadge">| admin</span></strong>
+        <small id="userEmail">analogue@mail.com</small>
+      </div>
+      <a class="logout-link" href="../auth/index.html" id="logoutLink">Logout</a>
+    </div>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Admin navigation">
+        <div>
+          <a class="workspace" href="../index.html">
+            <span class="workspace-icon"><img src="../svgs/admin-logo.svg" alt="admin logo" /></span>
+            Capacity Connect
+          </a>
+
+          <label class="srch">
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search" />
+            <span class="srch-icon" aria-hidden="true"><img src="../svgs/SearchIcon.svg" alt="search" /></span>
+          </label>
+
+          <!-- ADMIN main nav -->
+          <nav class="side-nav" id="mainNav">
+            <a href="index.html"><span>⌂</span> Dashboard</a>
+            <a href="users.html"><span><img src="../svgs/buffercopy.svg" alt="" /></span> Users</a>
+            <a href="approvals.html"><span>▥</span> Approvals <span class="count-badge" id="navBadge" hidden>0</span></a>
+            <a href="../shared/more.html"><span>▥</span> Analytics</a>
+            <a class="active" href="courses.html"><span>♧</span> Courses</a>
+          </nav>
+
+          <p class="nav-label">Docs</p>
+
+          <nav class="side-nav">
+            <a href="../shared/more.html"><span><img src="../svgs/reportIcon.svg" alt="reports" /></span> Reports</a>
+            <a href="../shared/more.html"><span><img src="../svgs/categories-icon.svg" alt="more" /></span> More</a>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <nav class="side-nav utility-nav">
+            <a href="profile.html"><span>◉</span> Profile</a>
+            <a href="../shared/settings.html"><span>⚙</span> Settings</a>
+          </nav>
+        </div>
+      </aside>
+
+      <main class="dashboard">
+        <p class="eyebrow">ADMIN · COURSES</p>
+        <h1>Manage Courses</h1>
+        <p class="intro">
+          Add, edit or delete courses below. Changes appear on all pages at once —
+          landing, dashboards, profiles and the trainee course list.
+        </p>
+
+        <!-- ADD FORM: hidden until the side button opens it -->
+        <section class="profile-box">
+          <div class="coll-head">
+            <h2>Add a course</h2>
+            <button class="inspect-btn" id="addToggle" type="button">+ Add</button>
+          </div>
+          <form id="addForm" hidden>
+            <label class="field">
+              <span>Title</span>
+              <input type="text" id="newTitle" placeholder="e.g. Monsoon Forecasting" required />
+            </label>
+            <div class="profile-row">
+              <label class="field">
+                <span>Subject / Field</span>
+                <input type="text" id="newSubject" placeholder="e.g. Earth Science" required />
+              </label>
+              <label class="field">
+                <span>Level</span>
+                <select id="newLevel" required>
+                  <option value="">Select</option>
+                  <option>Easy</option>
+                  <option>Normal</option>
+                  <option>Hard</option>
+                </select>
+              </label>
+            </div>
+            <div class="profile-row">
+              <label class="field">
+                <span>Weeks</span>
+                <input type="number" id="newWeeks" min="1" max="52" placeholder="4" required />
+              </label>
+              <label class="field">
+                <span>Lessons</span>
+                <input type="number" id="newLessons" min="1" max="200" placeholder="10" required />
+              </label>
+            </div>
+            <label class="field">
+              <span>Description (1-2 lines)</span>
+              <textarea id="newDesc" rows="2" placeholder="What is this course about?" required></textarea>
+            </label>
+            <label class="field">
+              <span>Topics (comma separated)</span>
+              <input type="text" id="newTopics" placeholder="e.g. Clouds, Forecasts, Warnings" required />
+            </label>
+            <label class="field">
+              <span>Resources (one per line: Kind | Title | Detail, kind = pdf, video, doc or link)</span>
+              <textarea id="newResources" rows="3" placeholder="pdf | Handbook | 48 pages"></textarea>
+            </label>
+            <button class="save-btn" type="submit">Add course</button>
+            <p class="save-note" id="addNote" hidden></p>
+          </form>
+        </section>
+
+        <!-- COURSE ROWS: filled by courses-admin.js -->
+        <section class="activity">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">ALL COURSES</p>
+              <h2 id="courseCountTitle">6 courses</h2>
+            </div>
+            <a href="#" id="resetLink">Reset to defaults</a>
+          </div>
+          <div id="adminCourseList"></div>
+        </section>
+      </main>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="explore">
+        <strong>EXPLORE</strong>
+        <a href="../index.html">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <strong>LEGAL</strong>
+        <a href="#">Privacy</a>
+        <a href="#">Disclaimer</a>
+      </div>
+      <div>
+        <strong>Site Info</strong>
+        <a href="#">Site Map</a>
+      </div>
+      <div>
+        <strong>ANALOGUE Developers</strong>
+        <p>Crafted for learners, mentors, and Analyzer.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Github <img src="../svgs/github.svg" alt="github" /></a>
+        <a href="#">Discord <img src="../svgs/discord.svg" alt="discord" /></a>
+        <a href="#">t.me <img src="../svgs/telegram.svg" alt="telegram" /></a>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+  <script src="../shared/guest.js"></script>
+  <script src="../shared/activity.js"></script>
+  <script src="../shared/guard.js"></script>
+  <script src="../shared/courses-data.js"></script>
+  <script src="../shared/course-counts.js"></script>
+  <script src="courses-admin.js"></script>
+</html>
+
+

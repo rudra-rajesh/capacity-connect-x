@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Link mark: chain link -->
+  <g fill="none" stroke="#111111" stroke-width="7" stroke-linecap="round">
+    <path d="M28 36 L36 28" />
+  </g>
+  <path fill="none" stroke="#111111" stroke-width="7" stroke-linecap="round" d="M24 30 L18 36 C14 40 14 46 18 50 C22 54 28 54 32 50 L38 44" />
+  <path fill="none" stroke="#111111" stroke-width="7" stroke-linecap="round" d="M40 34 L46 28 C50 24 50 18 46 14 C42 10 36 10 32 14 L26 20" />
+</svg>
